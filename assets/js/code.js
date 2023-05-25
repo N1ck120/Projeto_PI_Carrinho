@@ -36,6 +36,8 @@ function login(email,pass){
   else {
     alert("Login bem-sucedido!");
     window.open("index.html");
+    localStorage.setItem("user", email);
+    document.getElementById("navloginid").innerHTML = email;
   }
 }
 
@@ -67,6 +69,13 @@ function passver(email, pass, pass1) {
 
   }else{
     cadastro(email, pass)
+  }
+}
+
+function userlogin(){
+  if(localStorage.getItem("user") != null){
+    loginuser = localStorage.getItem('user');
+    document.getElementById("navloginid").innerHTML = loginuser;
   }
 }
 
