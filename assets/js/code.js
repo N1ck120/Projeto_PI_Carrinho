@@ -76,9 +76,15 @@ function userlogin(){
   if(localStorage.getItem("user") != null){
     loginuser = localStorage.getItem('user');
     document.getElementById("navloginid").innerHTML = loginuser;
+    document.getElementById("navloginid").href = "userinfo.html";
   }
 }
 
+function verify(){
+  if (localStorage.getItem("user") != null){
+    window.location.href = "index.html";
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   var btnTopo = document.getElementById('btn-topo');
