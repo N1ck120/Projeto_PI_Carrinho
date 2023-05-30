@@ -86,6 +86,17 @@ function verify(){
   }
 }
 
+function verify1(){
+  if (localStorage.getItem("user") == null){
+    window.location.href = "index.html";
+  }
+}
+
+function logoff(){
+  localStorage.removeItem("user")
+  window.location.href = "index.html";
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   var btnTopo = document.getElementById('btn-topo');
 
