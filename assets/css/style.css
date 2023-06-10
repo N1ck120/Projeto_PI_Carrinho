@@ -20,6 +20,11 @@
 
 .nav-item a {
     border-radius: 10px;
+    font-weight: bold;
+}
+
+.nav-item{
+    border-radius: 10px;
     margin-left: 100px;
     font-weight: bold;
 }

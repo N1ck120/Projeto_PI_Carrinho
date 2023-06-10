@@ -9,21 +9,22 @@ function matriz(){
 
   else {
     dados = [
-      {id:1, login:"admin", senha:123}
+      {id:1,nome:"adm", login:"admin", senha:123}
     ]
   }  
 
   return dados
 }
 
-function login(email,pass){
+function login(mail,pass){
 
   const db = matriz()
   var encontrado = false;
+  let name
 
   for (var i = 0; i < db.length; i++) {
     
-    if (db[i].login == email && db[i].senha == pass) {
+    if (db[i].login == mail && db[i].senha == pass) {
       encontrado = true;
       break;
     }
@@ -35,21 +36,20 @@ function login(email,pass){
 
   else {
     alert("Login bem-sucedido!");
+    name = db[i].nome;
+    name = "Bem vindo(a) "+ name;
     window.open("index.html");
-    localStorage.setItem("user", email);
-    document.getElementById("navloginid").innerHTML = email;
+    localStorage.setItem("user", name);
+    document.getElementById("navloginid").innerHTML = name;
   }
 }
 
 // Funções Cadastro
-function cadastro(email, pass){
-
-  var email = document.getElementById("email").value
-  var pass = document.getElementById("pass").value
+function cadastro(mail, name, pass){
 
   var db = matriz()
 
-  db.push({id:Date.now(),login:email,senha:pass })
+  db.push({id:Date.now(),login:mail,nome:name,senha:pass })
 
   let n = JSON.stringify(db);
 
@@ -62,13 +62,13 @@ function cadastro(email, pass){
   window.open('login.html')
 }
 
-function passver(email, pass, pass1) {
+function passver(mail, name, pass, pass1) {
 
   if(pass !== pass1){
     alert("As senhas não coincidem")
 
   }else{
-    cadastro(email, pass)
+    cadastro(mail, name, pass)
   }
 }
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var btnTopo = document.getElementById('btn-topo');
 
   window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 100) {
+    if (window.pageOffset > 100) {
       btnTopo.style.display = 'block';
     } else {
       btnTopo.style.display = 'none';
