@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var btnTopo = document.getElementById('btn-topo');
 
   window.addEventListener('scroll', function() {
-    if (window.pageOffset > 100) {
+    if (window.pageYOffset > 100) {
       btnTopo.style.display = 'block';
     } else {
       btnTopo.style.display = 'none';

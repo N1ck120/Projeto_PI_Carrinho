@@ -17,6 +17,7 @@
         
   <!--Script do JavaScripr-->
   <script src="assets/js/code.js"></script>
+  <script src="assets/js/produtos.js"></script>
 
   <!--Imagem do site-->
   <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
@@ -52,7 +53,7 @@
     </div>
   </nav>
   -->
-  
+
   <!--Nav Bar-->
     <nav class="navbar sticky-top" id="navback">
       <nav class="navbar navbar-expand-lg">
@@ -71,6 +72,9 @@
               </li>
               <li class="nav-item">
                 <a id="navsobreid" class="nav-link" href="https://github.com/pedrohrqphp/Projeto_PI" target="_blank">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a id="navcarid" class="nav-link" href="carrinho.html" target="_blank"><img src="assets/img/logos/shopping-cart.png" alt="" width="30px"></a>
               </li>
               <li id="nav-item-login" class="nav-item">
                 <a id="navloginid" class="nav-link" href="login.html" id="login">Login</a>
@@ -120,34 +124,38 @@
 
     <section id="gridMenu">
       <div class="card prodMenu">
-        <img src="assets/img/Imgs_Produtos/CentralAmplificadorRedeSirene.png" class="card-img-top" width="20px" alt="...">
+        <img id="img1" src="" class="card-img-top" width="20px" alt="Erro">
         <div class="card-body">
-          <p class="card-text"><a href="">Central Amplificador Ascael</a></p>
-          <h5 class="card-title">R$ 600,00</h5>
+          <p class="card-text" id="prod1"><a href="">Erro</a></p>
+          <h5 class="card-title" id="prec1">Erro</h5>
+          <button type="button" class="btn btn-primary" id="btn1" onclick="addcart(0)">Adicionar ao carrinho</button>
         </div>
       </div>
       
       <div class="card prodMenu">
-        <img src="assets/img/Imgs_Produtos/BotoeiraEnderecavelMaterlo.png" class="card-img-top" alt="...">
+        <img id="img2" src="" class="card-img-top" alt="Erro">
         <div class="card-body">
-          <p class="card-text"><a href="">Botoeira Endereçavel Ascael</a></p>
-          <h5 class="card-title">R$ 440,00</h5>
+          <p class="card-text" id="prod2"><a href="">Erro</a></p>
+          <h5 class="card-title" id="prec2">Erro</h5>
+          <button type="button" class="btn btn-primary" id="btn2" onclick="addcart(1)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <div class="card prodMenu">
-        <img src="assets/img/Imgs_Produtos/DetectorFumacaEnderecavel.png" class="card-img-top" alt="...">
+        <img id="img3" src="" class="card-img-top" alt="Erro">
         <div class="card-body">
-          <p class="card-text"><a href="">Detector de Fumaça Endereçavel Ascael</a></p>
-          <h5 class="card-title">R$ 430,00</h5>
+          <p class="card-text"id="prod3"><a href="">Erro</a></p>
+          <h5 class="card-title" id="prec3">Erro</h5>
+          <button type="button" class="btn btn-primary" id="btn3" onclick="addcart(2)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <div class="card prodMenu">
-        <img src="assets/img/Imgs_Produtos/CentralAmplificadorRedeSirene.png" class="card-img-top" alt="...">
+        <img id="img4" src="" class="card-img-top" alt="Erro">
         <div class="card-body">
-          <p class="card-text"><a href="">Central Amplificador de Rede e Sirene Ascael</a></p>
-          <h5 class="card-title">R$ 265,00</h5>
+          <p class="card-text" id="prod4"><a href="">Erro</a></p>
+          <h5 class="card-title" id="prec4">Erro</h5>
+          <button type="button" class="btn btn-primary" id="btn4" onclick="addcart(3)">Adicionar ao carrinho</button>
         </div>
       </div>
     </section>
@@ -185,6 +193,7 @@
   </footer>
 
   <script>
+    window.onload = carregaprod();
     window.onload = userlogin();
   </script>
 
