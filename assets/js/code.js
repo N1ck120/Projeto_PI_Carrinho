@@ -8,9 +8,7 @@ function matriz(){
   }
 
   else {
-    dados = [
-      {id:1,nome:"adm", login:"admin", senha:123}
-    ]
+    dados = []
   }  
 
   return dados
