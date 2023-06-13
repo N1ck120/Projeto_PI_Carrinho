@@ -137,8 +137,8 @@ function carrinhoprod(){
 
 
   var button = document.getElementById('finaliza');
-    button.addEventListener('click', function() {
-    window.location.href = 'produtos.html';
+  button.addEventListener('click', function() {
+  window.location.href = 'produtos.html';
   });
 
 if(aitens.length > 0){
@@ -147,8 +147,19 @@ if(aitens.length > 0){
   document.getElementById("finaliza").href = "userinfo.html";
 
   var button = document.getElementById('finaliza');
-    button.addEventListener('click', function() {
-    window.location.href = 'index.html';
+  button.addEventListener('click', function() {
+
+    if(localStorage.getItem("user") == null){
+      
+      window.location.href = "login.html";
+      localStorage.setItem("compra", 1);
+      
+    }else{
+
+      window.location.href = 'pix.html';
+
+    }
+
   });  
 }
      
@@ -201,11 +212,16 @@ function addcart(id){
   alert('Produto adicionado ao carrinho com sucesso!')
 }
 
-function finalizar() {
-  window.open('pix.html')
+function limpar(){
+  localStorage.removeItem("itenscarrinho");
+  location.reload(true);
 }
 
 function pago() {
+
   alert('Pagamento efeituado com sucesso!')
+  limpar()
+  window.open('index.html')
   window.close('pix.html')
+
 }

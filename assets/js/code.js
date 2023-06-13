@@ -33,12 +33,24 @@ function login(mail,pass){
   }
 
   else {
+    if(localStorage.getItem("compra") == 1){
+    alert("Login bem-sucedido!");
+    name = db[i].nome;
+    name = "Bem vindo(a) "+ name;
+    window.open("carrinho.html");
+    window.close('login.html')
+    localStorage.setItem("user", name);
+    document.getElementById("navloginid").innerHTML = name;
+    localStorage.removeItem("compra");
+    }else{
     alert("Login bem-sucedido!");
     name = db[i].nome;
     name = "Bem vindo(a) "+ name;
     window.open("index.html");
+    window.close('login.html')
     localStorage.setItem("user", name);
     document.getElementById("navloginid").innerHTML = name;
+    }
   }
 }
 
@@ -58,6 +70,7 @@ function cadastro(mail, name, pass){
   alert("Cadastro realizado com sucesso!")
 
   window.open('login.html')
+  window.close('cadastro.html')
 }
 
 function passver(mail, name, pass, pass1) {
@@ -92,6 +105,7 @@ function verify1(){
 
 function logoff(){
   localStorage.removeItem("user")
+  localStorage.removeItem("itenscarrinho")
   window.location.href = "index.html";
 }
 
