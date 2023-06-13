@@ -17,6 +17,7 @@
 
   <!--Script do JavaScript-->
   <script src="assets/js/code.js"></script>
+  <script src="assets/js/produtos.js"></script>
 
   <!--Imagem do Site-->
   <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
@@ -68,19 +69,21 @@
   <h2>Amplificadores</h2>
 
   <section id="amplificador">
-    <div class="card" id="prodAmp">
-      <img src="assets/img/Imgs_Produtos/CentralAmplificadorRedeSirene.png" class="card-img-top" width="20px" alt="...">
+    <div class="card prodMenu">
+      <img id="img1" src="" class="card-img-top" width="20px" alt="Erro">
       <div class="card-body">
-        <p class="card-text"><a href="">Central Amplificador Ascael</a></p>
-        <h5 class="card-title">R$ 600,00</h5>
+        <p class="card-text" id="prod1"><a href="">Erro</a></p>
+        <h5 class="card-title" id="prec1">Erro</h5>
+        <button type="button" class="btn btn-primary" id="btn1" onclick="addcart(0)">Adicionar ao carrinho</button>
       </div>
     </div>
 
-    <div class="card" id="prodAmp">
-      <img src="assets/img/Imgs_Produtos/24-300.png" class="card-img-top"  alt="...">
+    <div class="card prodMenu">
+      <img id="img2" src="" class="card-img-top" alt="Erro">
       <div class="card-body">
-        <p class="card-text"><a href="">Alarme de Incêndio Ascael</a></p>
-        <h5 class="card-title">R$ 500,00</h5>
+        <p class="card-text" id="prod2"><a href="">Erro</a></p>
+        <h5 class="card-title" id="prec2">Erro</h5>
+        <button type="button" class="btn btn-primary" id="btn2" onclick="addcart(1)">Adicionar ao carrinho</button>
       </div>
     </div>
 
@@ -94,19 +97,21 @@
   <h2>Periférico Alarme de Incêndio</h2>
 
   <section id="amplificador">
-    <div class="card" id="prodAmp">
-      <img src="assets/img/Imgs_Produtos/BotoeiraEnderecavelMaterlo.png" class="card-img-top" alt="...">
+    <div class="card prodMenu">
+      <img id="img3" src="" class="card-img-top" alt="Erro">
       <div class="card-body">
-        <p class="card-text"><a href="">Botoeira Endereçavel Ascael</a></p>
-        <h5 class="card-title">R$ 440,00</h5>
+        <p class="card-text"id="prod3"><a href="">Erro</a></p>
+        <h5 class="card-title" id="prec3">Erro</h5>
+        <button type="button" class="btn btn-primary" id="btn3" onclick="addcart(2)">Adicionar ao carrinho</button>
       </div>
     </div>
 
-    <div class="card" id="prodAmp">
-      <img src="assets/img/Imgs_Produtos/AcioandorManualConvencionalBIX3000.png" class="card-img-top" alt="...">
+    <div class="card prodMenu">
+      <img id="img4" src="" class="card-img-top" alt="Erro">
       <div class="card-body">
-        <p class="card-text"><a href="">Acionador Manual BIX3000 Ascael</a></p>
-        <h5 class="card-title">R$ 590,00</h5>
+        <p class="card-text" id="prod4"><a href="">Erro</a></p>
+        <h5 class="card-title" id="prec4">Erro</h5>
+        <button type="button" class="btn btn-primary" id="btn4" onclick="addcart(3)">Adicionar ao carrinho</button>
       </div>
     </div>
 
@@ -172,15 +177,7 @@
   <div id="ele" class="posi"></div>
   <h2>Eletrônicos, Áudio e Vídeo</h2>
 
-  <section id="amplificador">
-    <div class="card" id="prodAmp">
-      <img src="assets/img/Imgs_Produtos/CentralAmplificadorRedeSirene.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text"><a href="">Central Amplificador de Rede e Sirene Ascael</a></p>
-        <h5 class="card-title">R$ 265,00</h5>
-      </div>
-    </div>
-
+  <section id="amplificador"></section>
     <div class="card" id="prodAmp">
       <img src="assets/img/Imgs_Produtos/SireneAudioVisual.png" class="card-img-top" alt="...">
       <div class="card-body">
@@ -221,6 +218,7 @@
   </footer>
 
   <script>
+    window.onload = carregaprod();
     window.onload = userlogin();
   </script>
   
