@@ -56,15 +56,16 @@ function itenscarrinho(){
 
     let dadositens
     
-    if(JSON.parse(window.localStorage.getItem('itenscarrinho')) != null){
-        dadositens = JSON.parse(window.localStorage.getItem('itenscarrinho'))
-        document.getElementById("test").innerHTML = "Seu carrinho";
-        document.getElementById("finaliza").innerHTML = "Finalizar compra";
-        document.getElementById("finaliza").href = "userinfo.html";
+    if(JSON.parse(window.localStorage.getItem("itenscarrinho")) != null){
+
+    dadositens = JSON.parse(window.localStorage.getItem("itenscarrinho"))
+
     }
   
     else {
+
       dadositens = []
+
     }  
   
     return dadositens
@@ -76,6 +77,24 @@ function carrinhoprod(){
   const aitens = itenscarrinho()
   console.log(aitens)
   let total1 = 0 
+
+
+  var button = document.getElementById('finaliza');
+    button.addEventListener('click', function() {
+    window.location.href = 'produtos.html';
+  });
+
+if(aitens.length > 0){
+  document.getElementById("test").innerHTML = "Seu carrinho";
+  document.getElementById("finaliza").innerHTML = "Finalizar compra";
+  document.getElementById("finaliza").href = "userinfo.html";
+
+  var button = document.getElementById('finaliza');
+    button.addEventListener('click', function() {
+    window.location.href = 'index.html';
+  });  
+}
+     
     
   var elementoPai = document.getElementById('cardprodutos');
   var lista = document.createElement('div');
