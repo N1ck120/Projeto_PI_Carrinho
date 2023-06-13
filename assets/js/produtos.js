@@ -58,6 +58,9 @@ function itenscarrinho(){
     
     if(JSON.parse(window.localStorage.getItem('itenscarrinho')) != null){
         dadositens = JSON.parse(window.localStorage.getItem('itenscarrinho'))
+        document.getElementById("test").innerHTML = "Seu carrinho";
+        document.getElementById("finaliza").innerHTML = "Finalizar compra";
+        document.getElementById("finaliza").href = "userinfo.html";
     }
   
     else {
@@ -72,22 +75,39 @@ function carrinhoprod(){
   const prod = dbprodutos()
   const aitens = itenscarrinho()
   console.log(aitens)
+  let total1 = 0 
     
-  // Acessando o elemento pai
   var elementoPai = document.getElementById('cardprodutos');
+  var lista = document.createElement('div');
+  lista.style.listStyle = 'none';
 
-  // Loop para criar os elementos
   for (var i = 0; i < aitens.length; i++) {
-    // Criando o novo elemento (li)
-    var novoElemento = document.createElement('li');
-  
-    // Definindo o texto do elemento com base no item atual do loop
-    novoElemento.textContent = prod[aitens[i].id].nome;
-   
-    // Anexando o novo elemento ao elemento pai
-    elementoPai.appendChild(novoElemento);
-    
+    var item = document.createElement('li');
+
+    var imagem = document.createElement('img');
+    imagem.src = prod[aitens[i].id].img;
+    imagem.width = 40;
+    imagem.height = 40;
+
+    var nome = document.createElement('span');
+    nome.textContent = prod[aitens[i].id].nome;
+
+    var preco = document.createElement('span');
+    preco.textContent = "R$"+prod[aitens[i].id].preco;
+    total1 = total1 + prod[aitens[i].id].preco;
+
+    // Aninhando os elementos dentro do item
+    item.appendChild(imagem);
+    item.appendChild(nome);
+    item.appendChild(preco);
+
+    // Aninhando o item dentro da lista
+    lista.appendChild(item);
+    elementoPai.appendChild(lista);
   }
+    var total = document.createElement('span');
+    total.textContent = "Total: R$"+total1;
+    elementoPai.appendChild(total);
 }
 
 function addcart(id){
@@ -101,8 +121,6 @@ function addcart(id){
   localStorage.setItem("itenscarrinho", n);
 
   console.log(db)
-
-  alert("adicionado com sucesso!")
 
 }
 

@@ -14,6 +14,14 @@
     text-decoration: none;
 }
 
+#cardprodutos{
+    padding: 25px;
+}
+
+#cardprodutos1{
+    padding: 25px;
+}
+
 .imgcarr{
     width: 100%;
 }
@@ -170,4 +178,8 @@ footer {
 #cadastroForm {
     max-width: 360px;
     margin: 40px auto auto auto;
+}
+
+.card-body1{
+    margin: auto;
 }
