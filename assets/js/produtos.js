@@ -221,7 +221,5 @@ function pago() {
 
   alert('Pagamento efeituado com sucesso!')
   limpar()
-  window.open('index.html')
-  window.close('pix.html')
-
+  window.location.href = 'index.html'
 }
