@@ -143,4 +143,11 @@ function addcart(id){
 
 }
 
+function finalizar() {
+  window.open('pix.html')
+}
 
+function pago() {
+  alert('Pagamento efeituado com sucesso!')
+  window.close('pix.html')
+}
