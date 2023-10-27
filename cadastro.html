@@ -9,7 +9,8 @@
 <!--Link do CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 <!--Script do JavaScript-->
-    <script src="assets/js/code.js"></script>
+    <script src="/public/assets/js/code.js"></script>
+    <script src="/public/assets/js/account_funcs.js"></script>
 <!--Imagem do Site-->
     <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
     <title>Cadastro</title>
@@ -19,23 +20,23 @@
     <nav class="navbar sticky-top" id="navback">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><img src="assets/img/logos/logoa.png" width="60px" alt="Logo"></a>
+          <a class="navbar-brand" href="/index"><img src="assets/img/logos/logoa.png" width="60px" alt="Logo"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="/index">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="produtos.html">Produtos</a>
+                <a class="nav-link" href="/produtos">Produtos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://github.com/pedrohrqphp/Projeto_PI" target="_blank">Sobre</a>
               </li>
               <li id="nav-item-login" class="nav-item">
-                <a class="nav-link" href="login.html" id="login">Login</a>
+                <a class="nav-link" href="/login" id="login">Login</a>
               </li>
             </ul>
           </div>
@@ -46,20 +47,17 @@
     <section class="body">
       <div class="card" id="cadastroForm">
         <div class="card-body">
-          <form class="titleclass">
-            <div class="mb-3">
+          <form class="titleclass" method="post" action="/cadastro">
               <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="text" class="form-control" id="email" aria-describedby="emailHelp" required>
+              <input type="text" class="form-control" name="email" id="email" required>
               <label for="exampleInputEmail1" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" required>
-            </div>
-            <div class="mb-3">
+              <input type="text" class="form-control" name="nome" id="nome" required>
               <label for="exampleInputPassword1" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="pass" required>
-              <label for="exampleInputPassword1" class="form-label">Repita sua senha</label>
+              <input type="password" class="form-control" name="pass" id="pass" required>
+              <!--<label for="exampleInputPassword1" class="form-label">Repita sua senha</label>
               <input type="password" class="form-control" id="pass1" required>
-            </div>
-            <button type="submit" class="btn btn-primary" onclick="return passver(document.getElementById('email').value, document.getElementById('nome').value, document.getElementById('pass').value, document.getElementById('pass1').value)">Cadastrar</button>
+            </div>-->
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
           </form>
         </div>
       </div>
