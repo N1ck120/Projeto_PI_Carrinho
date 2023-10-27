@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/img/logos/logob.png" width="200px">
-    <source media="(prefers-color-scheme: light)" srcset="assets/img/logos/logoa.png" width="200px">
+    <source media="(prefers-color-scheme: dark)" srcset="public/assets/img/logos/logob.png" width="200px">
+    <source media="(prefers-color-scheme: light)" srcset="public/assets/img/logos/logoa.png" width="200px">
     <img alt="Logo do projeto.">
   </picture>
 </p>
