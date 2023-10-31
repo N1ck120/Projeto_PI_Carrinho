@@ -49,6 +49,13 @@ app.get('/pix', function(req, res) {
   res.sendFile(__dirname + '/pix.html')
 })
 
+app.get('/userinfo', function(req, res) {
+  res.sendFile(__dirname + '/userinfo.html')
+})
+
+app.get('/sobre', function(req, res) {
+  res.redirect("https://github.com/N1ck120/Projeto_PI_Carrinho");
+});
 
 //ERROR 404
 app.get('*', (req, res) => {
@@ -96,6 +103,7 @@ app.post('/cadastro', async (req, res) => {
   });
 });
 
+
 app.post('/login', async (req, res) => {
   const email = req.body.email;
   const pass = req.body.pass;
@@ -108,8 +116,9 @@ app.post('/login', async (req, res) => {
     }
 
     if (dados) {
-      res.cookie('id', JSON.stringify(dados.Id_User));
-
+      res.cookie('id', dados.Id_User);
+      res.cookie('name', dados.Nome);
+      res.cookie('email', dados.Email);
       res.redirect('/index');
     } else {
       // Nenhum dado encontrado
