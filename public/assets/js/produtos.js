@@ -103,15 +103,6 @@ function carregaprod(){
   imagem.src = prod[10].img;
 }
 
-
-
-
-
-
-
-
-
-
 //Funçoes carrinho
 function itenscarrinho(){
 

@@ -73,7 +73,7 @@ app.post('/cadastro', async (req, res) => {
 
   try {
     await insert.insert(name, email, pass); // Espera a função insert ser concluída
-    res.redirect('/index');
+    res.redirect('/login');
     
   } catch (err) {
     console.error(err);

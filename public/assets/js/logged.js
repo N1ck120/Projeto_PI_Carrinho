@@ -21,26 +21,31 @@ function deleteAllCookies() {
 }
 
 function logged() {
-  if(document.cookie){
+  if(getCookie('id') && getCookie('name') && getCookie('email')){
     const id = getCookie('id');
     const name = getCookie('name');
     const email = getCookie('email');
-    if(id != "" && name != "" && email != ""){
-      document.getElementById("navloginid").innerHTML = "Bem vindo(a) "+ name;
-      document.getElementById("navloginid").href = "/userinfo"
-      return true
-    }else{
-      deleteAllCookies();
-    }
+    document.getElementById("navloginid").innerHTML = "Bem vindo(a) "+ name;
+    document.getElementById("navloginid").href = "/userinfo"
+  }else{
+    deleteAllCookies()
   }
 }
 
 
-function verify(invert){
-  if (logged()){
+function logado(){
+
+}
+
+
+function verify(){
+  if (document.cookie){
     window.location.href = "/index";
   }
-  if(invert == true){
+}
+
+function verify2(){
+  if (!document.cookie){
     window.location.href = "/index";
   }
 }
