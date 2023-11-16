@@ -13,6 +13,9 @@ Projeto integrador do curso de DSM da Fatec Diadema - Luigi Papaiz. O site visa 
 ## Integrantes
 - Eduardo de Paula Pestana
 - Gabriel Dourado dos Santos
+- Luan Beserra de Oliveira
+- Julia Ayumi de Almeida Uno
+- Matheus Duarte da Silva
 - Nickolas Augusto Albuquerque Primo
 - Pedro Henrique Costa Pereira
 - Pedro Henrique de Holanda Carvalho
