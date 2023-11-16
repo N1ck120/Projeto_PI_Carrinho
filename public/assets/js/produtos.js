@@ -1,6 +1,5 @@
 // Funções Produtos
 function dbprodutos(){
-
   let estoque
 
   if(JSON.parse(window.localStorage.getItem('produtos')) != null){
@@ -28,7 +27,6 @@ function dbprodutos(){
 }
 
 function carregahome() {
-
   const prod = dbprodutos()
   
   document.getElementById("prod1").innerHTML = prod[0].nome;
@@ -52,7 +50,6 @@ function carregahome() {
 }
 
 function carregaprod(){
-
   const prod = dbprodutos()
   
   document.getElementById("prod1").innerHTML = prod[0].nome;
@@ -105,13 +102,11 @@ function carregaprod(){
 
 //Funçoes carrinho
 function itenscarrinho(){
-
     let dadositens
     
     if(JSON.parse(window.localStorage.getItem("itenscarrinho")) != null){
       dadositens = JSON.parse(window.localStorage.getItem("itenscarrinho"))
     }
-  
     else {
       dadositens = []
     }  
@@ -120,41 +115,33 @@ function itenscarrinho(){
 }
   
 function carrinhoprod(){
-
   const prod = dbprodutos()
   const aitens = itenscarrinho()
   console.log(aitens)
   let total1 = 0 
-
 
   var button = document.getElementById('finaliza');
   button.addEventListener('click', function() {
   window.location.href = '/produtos';
   });
 
-if(aitens.length > 0){
-  document.getElementById("test").innerHTML = "Seu carrinho";
-  document.getElementById("finaliza").innerHTML = "Finalizar compra";
-  document.getElementById("finaliza").href = "/userinfo";
+  if(aitens.length > 0){
+    document.getElementById("test").innerHTML = "Seu carrinho";
+    document.getElementById("finaliza").innerHTML = "Finalizar compra";
+    document.getElementById("finaliza").href = "/userinfo";
 
-  var button = document.getElementById('finaliza');
-  button.addEventListener('click', function() {
+    var button = document.getElementById('finaliza');
+    button.addEventListener('click', function() {
 
-    if(localStorage.getItem("user") == null){
-      
+    if(document.cookie){  
+      window.location.href = '/pix';    
+    }else{
       window.location.href = "/login";
       localStorage.setItem("compra", 1);
-      
-    }else{
-
-      window.location.href = '/pix';
-
     }
-
-  });  
+  });
 }
-     
-    
+       
   var elementoPai = document.getElementById('cardprodutos');
   var lista = document.createElement('div');
   lista.style.listStyle = 'none';
@@ -189,7 +176,6 @@ if(aitens.length > 0){
 }
 
 function addcart(id){
-  
   var db = itenscarrinho()
 
   db.push({id:id})
@@ -209,7 +195,6 @@ function limpar(){
 }
 
 function pago() {
-
   alert('Pagamento efeituado com sucesso!')
   limpar()
   window.location.href = '/index'

@@ -24,7 +24,8 @@ CREATE TABLE Carrinho(
     Id_User      		INT				NOT NULL,
     Valor_Carrinho		DECIMAL(10,2)	NOT NULL,
     
-    CONSTRAINT PK_Carrinho PRIMARY KEY(Id_Carrinho)
+    CONSTRAINT PK_Carrinho PRIMARY KEY(Id_Carrinho),
+    CONSTRAINT FK_User FOREIGN KEY(Id_User) REFERENCES User(Id_User)
 );
 
 

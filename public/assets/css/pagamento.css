@@ -59,10 +59,9 @@ h1 {
     flex-direction: row;
 }
 
-
 .grid_mercado_credito p {
     display: block;
-    line-height: 1mm;
+    line-height: 4mm;
     /* margin-top: 30px; */
 }
 
@@ -84,7 +83,6 @@ h1 {
     text-decoration: none;
     color: white;
 }
-
 
 .grid_cartao_credito {
  
