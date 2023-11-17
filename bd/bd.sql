@@ -7,15 +7,15 @@ CREATE TABLE User(
     Email   VARCHAR(90) NOT NULL,
     Senha   VARCHAR(90) NOT NULL,
     
-    CONSTRAINT PK_User PRIMARY KEY(Id_User)
+    CONSTRAINT PK_User PRIMARY KEY(Id_user)
 );
 
 CREATE TABLE Produto(
-    Id_Produto      INT             NOT NULL    AUTO_INCREMENT,
-    Nm_Produto      VARCHAR(90)     NOT NULL,
+    Id_Produto      INT         NOT NULL    AUTO_INCREMENT,
+    Nm_Produto      VARCHAR(90) NOT NULL,
     Preco_Produto   DECIMAL(10,2),
     
-    CONSTRAINT PK_Produto PRIMARY KEY(Id_Produto)
+    CONSTRAINT PK_Produto PRIMARY KEY(Id_produto)
 );
 
 CREATE TABLE Carrinho(
@@ -25,6 +25,16 @@ CREATE TABLE Carrinho(
     
     CONSTRAINT PK_Carrinho PRIMARY KEY(Id_Carrinho),
     CONSTRAINT FK_User FOREIGN KEY(Id_User) REFERENCES User(Id_User)
+);
+
+CREATE TABLE ProdutoCarrinho(
+	Id_ProdutoCarrinho 	INT	NOT NULL	AUTO_INCREMENT,
+    Id_Carrinho			INT	NOT NULL,
+    Id_Produto			INT	NOT NULL,
+    
+    PRIMARY KEY(Id_ProdutoCarrinho, Id_Carrinho, Id_Produto),
+    FOREIGN KEY(Id_Carrinho) REFERENCES Carrinho(Id_Carrinho),
+    FOREIGN KEY(Id_Produto) REFERENCES Produto(Id_Produto)
 );
 
 INSERT INTO Produto(Nm_Produto, Preco_Produto) VALUES
@@ -46,5 +56,7 @@ INSERT INTO Produto(Nm_Produto, Preco_Produto) VALUES
 SELECT * FROM User;
 SELECT * FROM Produto;
 SELECT * FROM Carrinho;
+
+SHOW TABLES;
 
 DROP DATABASE BO_Solucoes;
